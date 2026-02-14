@@ -16,15 +16,15 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Navbar (Logo Left, Links Right) --- */
+/* --- Navbar Fixed --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(2, 2, 5, 0.9);
+  background: rgba(2, 2, 5, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(157, 78, 221, 0.2);
-  padding: 15px 5%;
+  padding: 10px 5%;
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,113 +34,121 @@ body {
 
 .nav-logo {
   font-family: 'Dancing Script', cursive !important;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white !important;
   text-decoration: none;
 }
 .nav-logo span { color: var(--p-glow); }
 
-.nav-links {
+/* --- Global Section Spacing (Extra Space Fix) --- */
+section, .home-container, .skills-container, .projects-container, .contact-container {
+  padding-top: 80px !important; /* Navbar ke niche se space set ki */
+  margin-top: 0 !important;
   display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-.nav-links li a {
-  color: white !important;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-}
-.nav-links li a:hover {
-  color: var(--p-glow) !important;
-  text-shadow: 0 0 10px var(--p-glow);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* --- Hero & Sections (Original Vibe) --- */
+/* --- Hero Section Buttons --- */
 .hero-title {
-  font-size: 4.5rem;
-  font-weight: 600;
-  margin-top: 150px;
-}
-.name-purple {
-  color: var(--p-glow);
-  text-shadow: 0 0 15px var(--p-glow);
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 50px; /* Text ko thoda upar laya */
 }
 
-/* --- Cards & Buttons (Original Design) --- */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(157, 78, 221, 0.1);
-  border-radius: 25px;
-  padding: 35px;
-  transition: 0.4s;
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
 }
-.glass-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--p-glow);
-  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
+
+/* Explore Projects Button */
+.btn-p-fill {
+  background-color: var(--p-glow) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 15px var(--p-glow);
+}
+
+/* My Skills Button (Blue to White Fix) */
+.btn-p-outline {
+  background: transparent !important;
+  color: white !important; /* Blue khatam */
+  border: 2px solid white !important;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-p-outline:hover {
+  background: white;
+  color: black !important;
+}
+
+/* --- Professional Contact Form (Suiting the Theme) --- */
+.contact-form {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(157, 78, 221, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+.contact-input, .contact-form input, .contact-form textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(157, 78, 221, 0.3) !important;
+  border-radius: 10px !important;
+  color: white !important;
+  padding: 15px !important;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.contact-input:focus {
+  border-color: var(--p-glow) !important;
+  box-shadow: 0 0 10px var(--p-glow);
+}
+
+/* --- Skills Bar (Exact 4th Pic Look) --- */
+.skill-bar-wrapper {
+  width: 90%;
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.progress-line {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress-line span {
+  display: block;
+  height: 100%;
+  background: var(--p-glow);
+  box-shadow: 0 0 15px var(--p-glow);
 }
 
 /* --- Mobile Fixes --- */
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem !important; }
-  .menu-icon { display: block; }
   .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
     background: #020205;
-    padding: 30px 0;
+    top: 60px;
   }
-  .nav-links.active { display: flex !important; }
-}
-/* --- FIXED PORTIONS FOR PURPLE THEME --- */
-
-/* 1. Buttons (Explore & View Live) ko Purple karne ke liye */
-.view-live-btn, .btn-p-fill, .explore-btn {
-  background-color: #9d4edd !important; /* Original Purple */
-  color: white !important;
-  border: none !important;
-  box-shadow: 0 0 15px rgba(157, 78, 221, 0.7) !important;
-  padding: 10px 25px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: 0.3s ease-in-out;
-}
-
-.view-live-btn:hover {
-  box-shadow: 0 0 25px #9d4edd !important;
-  transform: translateY(-2px);
-}
-
-/* 2. Contact Form Inputs ko Dark aur Purple Border dene ke liye */
-.contact-input, .contact-form input, .contact-form textarea {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(157, 78, 221, 0.3) !important;
-  color: white !important;
-}
-
-.contact-input:focus {
-  border-color: #9d4edd !important;
-  box-shadow: 0 0 10px #9d4edd !important;
-}
-
-/* 3. Hero Section ke Links (Explore Projects/My Skills) */
-.hero-links a {
-  color: #9d4edd !important; /* Inka blue color khatam karne ke liye */
-  text-decoration: none;
-  font-weight: 600;
 }
