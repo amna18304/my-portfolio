@@ -223,3 +223,57 @@ body {
 .glass-card {
   animation: fadeInUp 0.8s ease-out;
 }
+/* Mobile Responsiveness (Screen size 768px se kam ke liye) */
+@media (max-width: 768px) {
+  
+  /* 1. Amna Tahir Text Size Fix */
+  h1, .hero-name { 
+    font-size: 2.2rem !important; /* Size chota kar diya */
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  /* 2. Navbar Styling for Mobile */
+  .menu-icon {
+    display: block !important; /* Sirf mobile par nazar aaye */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .nav-links {
+    display: none; /* Desktop menu chupa dein */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #000; /* Apne theme ke mutabiq color badlein */
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* Button click hone par menu dikhaye */
+  }
+
+  /* 3. Projects Boxes Fix */
+  .projects-container {
+    padding: 10px !important;
+  }
+
+  .project-box {
+    width: 95% !important; /* Box poori screen par fit ho jaye */
+    margin: 15px auto !important;
+    padding: 15px !important;
+    min-height: auto !important; /* Box ki fixed height khatam */
+  }
+
+  .project-box h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .project-box p {
+    font-size: 0.9rem !important;
+  }
+}
