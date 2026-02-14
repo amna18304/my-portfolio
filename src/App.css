@@ -107,3 +107,40 @@ body {
   }
   .nav-links.active { display: flex !important; }
 }
+/* --- FIXED PORTIONS FOR PURPLE THEME --- */
+
+/* 1. Buttons (Explore & View Live) ko Purple karne ke liye */
+.view-live-btn, .btn-p-fill, .explore-btn {
+  background-color: #9d4edd !important; /* Original Purple */
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.7) !important;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.view-live-btn:hover {
+  box-shadow: 0 0 25px #9d4edd !important;
+  transform: translateY(-2px);
+}
+
+/* 2. Contact Form Inputs ko Dark aur Purple Border dene ke liye */
+.contact-input, .contact-form input, .contact-form textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(157, 78, 221, 0.3) !important;
+  color: white !important;
+}
+
+.contact-input:focus {
+  border-color: #9d4edd !important;
+  box-shadow: 0 0 10px #9d4edd !important;
+}
+
+/* 3. Hero Section ke Links (Explore Projects/My Skills) */
+.hero-links a {
+  color: #9d4edd !important; /* Inka blue color khatam karne ke liye */
+  text-decoration: none;
+  font-weight: 600;
+}
