@@ -316,3 +316,68 @@ body {
   color: var(--p-glow) !important; /* Sirf <span> wala 'with' purple */
   margin: 0 5px; /* Thodi si space 'with' ke dono taraf */
 }
+/* --- Contact Form Professional Look --- */
+.contact-form-container {
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Glassy Card for Form */
+.contact-card-wrapper {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(157, 78, 221, 0.1) !important;
+  border-radius: 25px;
+  padding: 50px;
+  width: 100%;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+}
+
+/* Input & Textarea Styling */
+.contact-input, 
+.contact-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05) !important; /* Dark transparent background */
+  border: 1px solid rgba(157, 78, 221, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 15px 20px !important;
+  color: white !important;
+  margin-bottom: 20px !important;
+  outline: none !important;
+  transition: 0.3s ease;
+}
+
+/* Message Box height aur white color remove karne ke liye */
+.contact-textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+/* Focus hone par Purple Glow */
+.contact-input:focus, 
+.contact-textarea:focus {
+  border-color: var(--p-glow) !important;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.4) !important;
+  background: rgba(157, 78, 221, 0.05) !important;
+}
+
+/* Send Message Button */
+.btn-send-message {
+  background: var(--p-glow) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 35px !important;
+  border-radius: 12px !important;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  float: right; /* Button ko right par lane ke liye */
+  box-shadow: 0 5px 20px rgba(157, 78, 221, 0.4);
+}
+
+.btn-send-message:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(157, 78, 221, 0.6);
+}

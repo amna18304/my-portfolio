@@ -9,19 +9,21 @@ const Contact = () => {
       </div>
 
       <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="glass-card p-5">
-    
-      <form name="contact" method="POST" data-netlify="true" className="contact-form">
-  {/* Ye line Netlify ko batati hai ke ye form submit hona hai */}
-  <input type="hidden" name="form-name" value="contact" />
-  
-  <input type="text" name="name" placeholder="Your Name" required className="contact-input" />
-  <input type="email" name="email" placeholder="Your Email" required className="contact-input" />
-  <textarea name="message" placeholder="Your Message" required className="contact-textarea"></textarea>
-  
-  <button type="submit" className="btn-p-fill">Send Message</button>
-</form>
+        <div className="col-md-7 col-lg-6">
+          <div className="glass-card p-4 p-md-5"> {/* Padding adjusted for mobile */}
+            <form name="contact" method="POST" data-netlify="true" className="contact-form">
+              {/* Netlify hidden input */}
+              <input type="hidden" name="form-name" value="contact" />
+              
+              <input type="text" name="name" placeholder="Your Name" required className="contact-input" />
+              <input type="email" name="email" placeholder="Your Email" required className="contact-input" />
+              <textarea name="message" placeholder="Your Message" required className="contact-textarea"></textarea>
+              
+              {/* Button class updated to match the new CSS */}
+              <div className="d-flex justify-content-end">
+                 <button type="submit" className="btn-send-message">Send Message</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
