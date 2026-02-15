@@ -11,18 +11,17 @@ const Contact = () => {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="glass-card p-5">
-            <form>
-              <div className="mb-4">
-                <input type="text" className="contact-input" placeholder="Your Name" />
-              </div>
-              <div className="mb-4">
-                <input type="email" className="contact-input" placeholder="Your Email" />
-              </div>
-              <div className="mb-4">
-                <textarea className="contact-input" rows="4" placeholder="Your Message"></textarea>
-              </div>
-              <button className="btn-p-fill w-100 py-3">Send Message</button>
-            </form>
+    
+      <form name="contact" method="POST" data-netlify="true" className="contact-form">
+  {/* Ye line Netlify ko batati hai ke ye form submit hona hai */}
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <input type="text" name="name" placeholder="Your Name" required className="contact-input" />
+  <input type="email" name="email" placeholder="Your Email" required className="contact-input" />
+  <textarea name="message" placeholder="Your Message" required className="contact-textarea"></textarea>
+  
+  <button type="submit" className="btn-p-fill">Send Message</button>
+</form>
           </div>
         </div>
       </div>
